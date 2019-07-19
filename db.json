@@ -1,11 +1,11 @@
 {
   "logs": [
     {
-      "message": "Changed network card in server 007",
-      "attention": false,
+      "id": 1,
+      "message": "Change network card in server 007",
+      "attention": true,
       "tech": "Sam Smith",
-      "date": "2019-05-31T15:46:10.179Z",
-      "id": 1
+      "date": "2019-07-19T03:49:37.424Z"
     },
     {
       "id": 2,
@@ -23,17 +23,17 @@
     },
     {
       "id": 4,
-      "message": "Workstation 026 is up and running",
+      "message": "Workstation 026 is up and running!!",
       "attention": false,
-      "tech": "Sara Wilson",
-      "date": "2019-05-31T19:57:35.544Z"
+      "tech": "Sam Smith",
+      "date": "2019-07-19T03:41:37.737Z"
     },
     {
-      "message": "Hard drive failed workstation 225",
+      "id": 5,
+      "message": "Check CPU on workstation 3",
       "attention": true,
-      "tech": "Sara Wilson",
-      "date": "2019-07-19T01:30:45.271Z",
-      "id": 6
+      "tech": "John Doe",
+      "date": "2019-07-19T03:48:45.042Z"
     }
   ],
   "techs": [
