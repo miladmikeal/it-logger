@@ -21,14 +21,14 @@ export const getLogs = () => async dispatch => {
     dispatch({
       type: GET_LOGS,
       payload: data
-    })
+    });
   } catch (err) {
     dispatch({
       type: LOGS_ERROR,
       payload: err.response.statusText
-    })
+    });
   }
-}
+};
 
 // Add new log
 export const addLog = log => async dispatch => {
@@ -54,9 +54,9 @@ export const addLog = log => async dispatch => {
       payload: err.response.statusText
     });
   }
-}
+};
 
-// Delete log
+// Delete log from server
 export const deleteLog = id => async dispatch => {
   try {
     setLoading();
@@ -64,6 +64,7 @@ export const deleteLog = id => async dispatch => {
     await fetch(`/logs/${id}`, {
       method: 'DELETE'
     });
+
     dispatch({
       type: DELETE_LOG,
       payload: id
@@ -74,9 +75,9 @@ export const deleteLog = id => async dispatch => {
       payload: err.response.statusText
     });
   }
-}
+};
 
-// Updayr log
+// Update log on server
 export const updateLog = log => async dispatch => {
   try {
     setLoading();
@@ -89,7 +90,7 @@ export const updateLog = log => async dispatch => {
       }
     });
 
-    const data = res.json();
+    const data = await res.json();
 
     dispatch({
       type: UPDATE_LOG,
@@ -101,9 +102,9 @@ export const updateLog = log => async dispatch => {
       payload: err.response.statusText
     });
   }
-}
+};
 
-// Search logs
+// Search server logs
 export const searchLogs = text => async dispatch => {
   try {
     setLoading();
@@ -114,32 +115,33 @@ export const searchLogs = text => async dispatch => {
     dispatch({
       type: SEARCH_LOGS,
       payload: data
-    })
+    });
   } catch (err) {
     dispatch({
       type: LOGS_ERROR,
-      payload: err.response.data
-    })
+      payload: err.response.statusText
+    });
   }
-}
+};
 
 // Set current log
 export const setCurrent = log => {
   return {
     type: SET_CURRENT,
     payload: log
-  }
-}
+  };
+};
 
 // Clear current log
 export const clearCurrent = () => {
   return {
     type: CLEAR_CURRENT
-  }
-}
+  };
+};
 
+// Set loading to true
 export const setLoading = () => {
   return {
     type: SET_LOADING
-  }
-}
+  };
+};
